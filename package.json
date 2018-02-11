@@ -1,0 +1,45 @@
+{
+  "name": "nuxt-boilerplate",
+  "version": "1.0.0",
+  "description": "Nuxt.js project",
+  "author": "Shuichiro Kamiya <notsunohito@gmail.com>",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "dev:server": "node mock-server/json-server.js",
+    "dev:server:reset": "cp mock-server/db/dev/seed.json mock-server/db/dev/db.json",
+    "dev:server:test": "NODE_ENV=test node mock-server/json-server.js",
+    "dev:server:test:reset": "cp mock-server/db/test/seed.json mock-server/db/test/db.json",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "precommit": "npm run lint",
+    "test": "NODE_ENV=test echo '** Make sure npm run dev:server:test is running. **' && npm run dev:server:test:reset && jest"
+  },
+  "dependencies": {
+    "axios": "^0.17.1",
+    "cookie-parser": "^1.4.3",
+    "is-mobile": "^0.2.2",
+    "minireset.css": "0.0.3",
+    "nuxt": "^1.0.0",
+    "randomstring": "^1.1.5"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.1",
+    "babel-jest": "^22.1.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.15.0",
+    "eslint-friendly-formatter": "^3.0.0",
+    "eslint-loader": "^1.7.1",
+    "eslint-plugin-vue": "^4.0.0",
+    "jest": "^22.1.4",
+    "json-server": "^0.12.1",
+    "node-sass": "^4.7.2",
+    "pug": "^2.0.0-rc.4",
+    "pug-loader": "^2.3.0",
+    "sass-loader": "^6.0.6"
+  }
+}

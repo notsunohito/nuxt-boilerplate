@@ -1,0 +1,23 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "dev@example.com",
+      "password": "1234"
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "userId": 1,
+      "title": "The night hunter",
+      "content": "The world is not always as civilized as people might think. There are still those who would follow the blackest paths of magic and become corrupted by the darker powers that flow through Runeterra. Shauna Vayne knows this fact well.\nAs a young privileged girl in the heart of Demacia's elite, her father tried to convince her of the constabulary's ever-vigilant eye. Young and naive, she truly believed that her world was one of perfect safety, until one night, when a twisted witch took interest in her father. The malevolent woman overcame her father's conciliar guard, then tortured her family before murdering them. The young Shauna escaped only by hiding herself and then fleeing once the hag had departed, plagued by the screams of her loved ones as she ran. A burning hatred was born in her that day, one that could never be denied.\n      Vayne was able to take care of herself using her father's money, and she began to train as soon as an instructor would have her as a student. By the time she was a fully grown woman, she had become a grim warrior. However, the fields of battle were not to be her home.\n      Demacia needed a protector, one who hunted those lost to the darkness. Shauna used her family's contacts to become the first Night Hunter Night Hunter, and now her prowess is legendary. It is said that those who practice the black arts quake when they hear that the Night Hunter is on the prowl."
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "title": "Grandmaster at arms",
+      "content": "It is seldom the case where a champion is defined by his actions after joining the League of Legends rather than before. Such is the case with JaxSquare Jax, for whom the argument could be made that he is the most prolific tournament fighter currently at the Institute of War.\nBefore joining the League, Jax was an unremarkable soldier-for-hire. For reasons known only to the former leader of the League, High Councilor Reginald Ashram, Jax was put on the top of the list of candidates to receive a League Judgment - the interview process that either accepts or rejects a prospective champion. His Judgment was the quickest in League history, where the Doors of Acceptance glowed and slowly swung open as soon as it began. Jax faced no recorded Observation or Reflection during his Judgment.\nJax proved himself to be an immediate terror in the Fields of Justice. The self-proclaimed 'Armsmaster of the League' rattled off a streak of consecutive wins that to this day has not been matched.\nA number of summoners in the League grew concerned that the perceived objectivity of the League of Legends would be questioned by the presence of an unknown fighter who was unbeatable. For this reason, the new leader of the League (following Reginald Ashram's disappearance) High Councilor Heyward Relivash, created special restrictions for Jax to fight under.\nThis was something the League had never done before, and something which has never been done since. The burly fighter responded by imposing his own special conditions; as a means of protest, he permitted himself to fight using only a brass lamppost. Neither the League's sanctions nor his own has affected his winning ways.\nThe League has since rescinded its sanctions, but Jax has not; he fights and fights well with his trusty brass lamppost."
+    }
+  ]
+}
