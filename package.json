@@ -19,7 +19,7 @@
     "test": "NODE_ENV=test echo '** Make sure npm run dev:server:test is running. **' && npm run dev:server:test:reset && jest"
   },
   "dependencies": {
-    "axios": "^0.17.1",
+    "@nuxtjs/axios": "^5.0.1",
     "cookie-parser": "^1.4.3",
     "is-mobile": "^0.2.2",
     "minireset.css": "0.0.3",
