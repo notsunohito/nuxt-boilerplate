@@ -33,6 +33,7 @@ module.exports = {
           loader: 'eslint-loader',
           exclude: /(node_modules)/
         })
+        config.devtool = 'source-map'
       }
     }
   },
