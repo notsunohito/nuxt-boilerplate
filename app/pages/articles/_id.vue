@@ -10,15 +10,14 @@
 </template>
 
 <script>
-import {fetchArticleById} from '~/api/ArticleApi'
 import TheNavi from '~/components/TheNavi'
 
 export default {
   async validate({params}) {
     return /^\d+$/.test(params.id)
   },
-  async asyncData({ params, error }) {
-    const article = await fetchArticleById(params.id)
+  async asyncData({ params, error, $axios }) {
+    const article = await $axios.fetchArticleById(params.id)
     return {
       article
     }

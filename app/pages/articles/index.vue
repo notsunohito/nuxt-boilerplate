@@ -11,12 +11,11 @@
 </template>
 
 <script>
-import {fetchAllArticles} from '~/api/ArticleApi'
 import TheNavi from '~/components/TheNavi'
 
 export default {
-  async asyncData() {
-    const articles = await fetchAllArticles()
+  async asyncData({ $axios }) {
+    const articles = await $axios.fetchAllArticles()
     return {
       articles
     }

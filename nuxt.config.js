@@ -1,3 +1,6 @@
+const { NODE_ENV } = process.env
+const API_PORT = NODE_ENV === 'test' ? 1338 : 1337
+
 module.exports = {
   /*
   ** Headers of the page
@@ -40,5 +43,16 @@ module.exports = {
   css: [
     'minireset.css/minireset.css',
     { src: '~assets/css/global.sass', lang: 'sass' }
-  ]
+  ],
+  modules: [
+    '@nuxtjs/axios',
+  ],
+  plugins: [
+    '~/api/'
+  ],
+  axios: {
+    baseURL: `http://localhost:${API_PORT}/`,
+    headers: {'Content-Type': 'application/json'},
+    credentials: true
+  }
 }
