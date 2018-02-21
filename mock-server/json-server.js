@@ -1,7 +1,7 @@
 const path = require('path')
 const jsonServer = require('json-server')
 const cookieParser = require('cookie-parser')
-const {signin, signout, isAuthorized} = require('./router/sessions')
+const {signin, signout, myUser, isAuthorized} = require('./router/sessions')
 
 const server = jsonServer.create()
 const middlewares = jsonServer.defaults({bodyParser: true, noCors: false})
@@ -10,6 +10,7 @@ server.use(cookieParser())
 
 server.post('/sessions/signin', signin)
 server.post('/sessions/signout', signout)
+server.get('/my/user', myUser)
 
 const authExclusions = [
   {method: 'GET', path: '/db'},

@@ -18,10 +18,15 @@ export const mutations = {
 export const actions = {
   async nuxtServerInit({ commit }, { app, req }) {
 
-    if (/userId=([^;]+);?/.test(req.headers.cookie)) {
-      const [_, userId] = /userId=([^;]+);?/.exec(req.headers.cookie)
-      const user = await app.$axios.fetchUserById(userId)
-      commit('SET_AUTH_USER', user)
+    if (/session=([^;]+);?/.test(req.headers.cookie)) {
+      const [_, sessionId] = /session=([^;]+);?/.exec(req.headers.cookie)
+      if(sessionId) {
+        app.$axios.setToken(sessionId, 'Bearer')
+        const user = await app.$axios.fetchMyUser()
+        if(user) commit('SET_AUTH_USER', user)
+      } else {
+        app.$axios.setToken(false)
+      }
     }
 
     const isDesktop = !isMobile(req.headers['user-agent'])

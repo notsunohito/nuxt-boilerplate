@@ -53,6 +53,7 @@ module.exports = {
   axios: {
     baseURL: `http://localhost:${API_PORT}/`,
     headers: {'Content-Type': 'application/json'},
-    credentials: true
+    credentials: true,
+    debug: true
   }
 }

@@ -1,4 +1,16 @@
+import Cookies from 'js-cookie';
+
+
 export default function ({ $axios, redirect }) {
+
+  if (process.client) {
+    const sessionId = Cookies.get('session')
+    if(sessionId) {
+      $axios.setToken(sessionId, 'Bearer')
+    } else {
+      $axios.setToken(false)
+    }
+  }
 
   $axios.fetchAllArticles = async () => {
     return await $axios.get('/articles').then(({data})=>data)
@@ -9,13 +21,20 @@ export default function ({ $axios, redirect }) {
   }
 
   $axios.createSession = async ({email, password}) => {
-    const res = await $axios.post('/sessions/signin', {email, password})
-    const [_, userId] = /userId=([^;])+;?/.exec(document.cookie)
-    return await $axio.fetchUserById(userId)
+    const {sessionId} = await $axios.post('/sessions/signin', {email, password}).then(({data})=> data)
+    $axios.setToken(sessionId, 'Bearer')
+    Cookies.set('session', sessionId)
+    return await $axios.fetchMyUser()
   }
   
   $axios.destroySession = async () => {
-    return await $axios.post('/sessions/signout')
+    await $axios.post('/sessions/signout')
+    $axios.setToken(false)
+    Cookies.remove('session')
+  }
+
+  $axios.fetchMyUser = async () => {
+    return await $axios.get(`/my/user`).then(({data})=> data)
   }
   
   $axios.fetchUserById = async (userId) => {

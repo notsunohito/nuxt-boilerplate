@@ -20,8 +20,10 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.0.1",
+    "cookie": "^0.3.1",
     "cookie-parser": "^1.4.3",
     "is-mobile": "^0.2.2",
+    "js-cookie": "^2.2.0",
     "minireset.css": "0.0.3",
     "nuxt": "^1.0.0",
     "randomstring": "^1.1.5"
